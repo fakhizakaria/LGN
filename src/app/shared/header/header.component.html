@@ -1,0 +1,30 @@
+<div class="header">
+  <div class="container">
+    <div class="logo">
+      <img routerLink="/home" [src]="logoImagePath" alt="Logo">
+    </div>
+    <nav class="menu">
+      <div class="burger-menu" (click)="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul class="nav-links" [ngClass]="{ 'show-menu': isMenuOpen }">
+        <li><a routerLink="/home">{{ 'HOME' | translate }}</a></li>
+        <li><a routerLink="/contact-us">{{ 'CONTACT_US' | translate }}</a></li>
+        <li><a routerLink="/events">{{ 'EVENTS' | translate }}</a></li>
+
+        <li>
+          <a>{{ 'SERVICES' | translate }}</a>
+          <ul class="dropdown">
+            <li><a routerLink="/lgn-kids">{{ 'LINGUA_KIDS' | translate }}</a></li>
+            <li><a routerLink="/lgn-adults">{{ 'LINGUA_ADULTS' | translate }}</a></li>
+            <li><a routerLink="/lgn-teens">{{ 'LINGUA_TEENS' | translate }}</a></li>
+          </ul>
+        </li>
+        <li><a routerLink="/catalogue">{{ 'CATALOGUES' | translate }}</a></li>
+        <li><a routerLink="/aboutMe">{{ 'ABOUT_ME' | translate }}</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>

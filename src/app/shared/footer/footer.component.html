@@ -1,0 +1,41 @@
+<div class="footer">
+    <div class="f-item-con">
+      <div class="app-info">
+        <span class="app-name">
+          <span class="app-initial">L</span>ingua
+          <span class="app-initial">N</span>ature
+        </span>
+        <p [innerHTML]="'APP_DESCRIPTION_FOOTER' | translate "></p>
+      </div>
+      <div class="useful-links">
+        <div class="footer-title">{{ 'USEFUL_LINKS' | translate }}</div>
+        <ul>
+          <li routerLink="/home">{{ 'HOME' | translate }}</li>
+          <li routerLink="/events">{{ 'EVENTS' | translate }}</li>
+          <li routerLink="/contact-us">{{ 'CONTACT_US' | translate }}</li>
+          <li routerLink="/catalogue">{{ 'CATALOGUES' | translate }}</li>
+          <li routerLink="/aboutMe">{{ 'ABOUT_ME' | translate }}</li>
+        </ul>
+      </div>
+      <!-- <div class="help-sec">
+        <div class="footer-title">{{ 'HELP_TITLE' | translate }}</div>
+        <ul>
+          <li>{{ 'LINGUA_KIDS' | translate }}</li>
+          <li>{{ 'LINGUA_ADULTS' | translate }}</li>
+          <li><a>{{ 'LINGUA_TEENS' | translate }}</a></li>
+          <li routerLink="/contact-us">{{ 'REPORT' | translate }}</li>
+        </ul>
+      </div> -->
+      <div class="help-sec">
+        <div class="footer-title">{{ 'HELP_TITLE' | translate }}</div>
+        <ul>
+          <li a routerLink="/lgn-kids" >{{ 'LINGUA_KIDS' | translate }}</li>
+          <li routerLink="/lgn-adults">{{ 'LINGUA_ADULTS' | translate }}</li>
+          <li routerLink="/lgn-teens">{{ 'LINGUA_TEENS' | translate }}</li>
+          <li routerLink="/contact-us">{{ 'REPORT' | translate }}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cr-con">{{ 'ExlensIT' | translate }}</div>
+  </div>
+  

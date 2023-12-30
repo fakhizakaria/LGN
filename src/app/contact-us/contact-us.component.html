@@ -1,0 +1,80 @@
+<div class="containerContactUs">
+  <div class="container">
+    <div class="content">
+      <div class="left-side">
+        <div class="details">
+          <img [src]="locationImagePath" alt="location Lingua Nature">
+          <div class="info">
+            <div class="topic">{{ 'Address' | translate }}</div>
+            <div class="text">{{ 'Surkhet, NP12, Birendranagar 06' | translate }}</div>
+          </div>
+        </div>
+        <div class="details">
+          <img [src]="phoneImagePath" alt="mail Lingua Nature">
+          <div class="info">
+            <div class="topic">{{ 'Phone' | translate }}</div>
+            <div class="text">{{ '+0098 9893 5647, +0096 3434 5678' | translate }}</div>
+          </div>
+        </div>
+        <div class="details">
+          <img [src]="mailImagePath" alt="mail Lingua Nature">
+          <div class="info">
+            <div class="topic">{{ 'Email' | translate }}</div>
+            <div class="text">{{ 'infoodinglab.com' | translate }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="topic-text">{{ 'SEND_MESSAGE' | translate }}</div>
+        <p>{{ 'LINGUA_SERVICES_QUERY' | translate }}</p>
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+          <div class="input-box">
+            <input type="text" formControlName="name" placeholder="{{ 'ENTER_NAME' | translate }}">
+            <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+              <div class="error-message" *ngIf="contactForm.get('name')?.hasError('required')">
+                {{ 'NAME_REQUIRED_ERROR' | translate }}
+              </div>
+              <div class="error-message" *ngIf="contactForm.get('name')?.hasError('invalidName')">
+                {{ 'INVALID_NAME_ERROR' | translate }}
+              </div>
+            </div>
+          </div>
+          <div class="input-box">
+            <input type="email" formControlName="email" placeholder="{{ 'ENTER_EMAIL' | translate }}">
+            <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+              <div class="error-message" *ngIf="contactForm.get('email')?.hasError('required')">
+                {{ 'EMAIL_REQUIRED_ERROR' | translate }}
+              </div>
+              <div class="error-message" *ngIf="contactForm.get('email')?.hasError('invalidEmail')">
+                {{ 'INVALID_EMAIL_ERROR' | translate }}
+              </div>
+            </div>
+          </div>
+          <div class="input-box message-box">
+            <textarea formControlName="message" placeholder="{{ 'YOUR_MESSAGE' | translate }}"></textarea>
+            <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+              <div class="error-message" *ngIf="contactForm.get('message')?.hasError('required')">
+                {{ 'MESSAGE_REQUIRED_ERROR' | translate }}
+              </div>
+              <div class="error-message" *ngIf="contactForm.get('message')?.hasError('minlength')">
+                {{ 'MESSAGE_LENGTH_ERROR' | translate }}
+              </div>
+            </div>
+          </div>
+          <div class="button">
+            <input type="submit" value="{{ 'SEND_NOW' | translate }}">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="popup" [ngClass]="{'show': showPopup}">
+  <div class="popup-content">
+    <span (click)="closePopup()" class="close">&times;</span>
+    <h2>{{ popupTitle }}</h2>
+    <p>{{ popupMessage }}</p>
+    <p *ngIf="!mailSended">{{ 'EMAIL_SENT_MESSAGE' | translate }}</p>
+  </div>
+</div>

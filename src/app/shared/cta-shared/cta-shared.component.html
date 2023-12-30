@@ -1,0 +1,29 @@
+<div class="cta"
+     [ngClass]="{ 'show-details': showDetailsFlag, 'stop-animation': animationStopped }"
+     (click)="showDetails()">
+  <div class="cta-info-icon">
+    <span>i</span>
+  </div>
+  <div class="cta-details" *ngIf="showDetailsFlag">
+    <div *ngIf="nearestEvent?.summary" class="details">
+      <h2>Next Event</h2>
+      <div class="event-details">
+        <h3>{{ nearestEvent.summary }}</h3>
+        <p>
+          <img [src]="timeIntervalEventImagePath" alt="Lingua Nature upcoming event time line" width="40px">
+          {{ nearestEvent.start?.dateTime || nearestEvent.start?.date }}
+        </p>
+        <p *ngIf="nearestEvent.location">
+          <img [src]="locationImagePath" alt="location upcoming event" width="40px">
+          {{ nearestEvent.location }}
+        </p>
+        <p *ngIf="nearestEvent.description"> Description: {{ nearestEvent.description }}</p>
+      </div>
+      <a routerLink="/contact-us">Contact Us</a>
+    </div>
+    <div *ngIf="!nearestEvent?.summary" class="no-event">
+      <p>No upcoming events</p>
+      <a routerLink="/contact-us">Contact Us</a>
+    </div>
+  </div>
+</div>

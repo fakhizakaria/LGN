@@ -1,0 +1,88 @@
+.containerLanguages {
+  position: absolute;
+  left: 20px;
+  top: 15%;
+  width: 150px;
+
+  .languageSelector {
+    position: relative;
+
+    .selectedLanguage {
+      width: 100%;
+      align-items: center;
+      cursor: pointer;
+      height: 45px;
+      background-color: white;
+      border: none;
+      display: flex;
+      justify-content: space-evenly;
+      padding: 0;
+      margin: 0;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+      .flagIcon {
+        margin-right: 5px;
+        height: 20px;
+        width: 30px;
+        border-radius: 5px;
+      }
+
+      span {
+        font-size: 1.2em;
+        color: #333;
+        font-weight: 700;
+      }
+
+      &:hover {
+        // Update styles on hover for better feedback
+        background-color: #f5f5f5;
+      }
+    }
+
+    .languageOptions {
+      display: none; // Initially hidden
+      top: calc(100% + 5px);
+      left: 0;
+      background-color: white;
+      padding: 5px;
+      list-style: none;
+      border-radius: 5px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      display: none; // Initially hidden
+
+      li {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 5px 10px;
+        transition: background-color 0.3s ease;
+
+        .flagIcon {
+          margin-right: 5px;
+          max-width: 20px;
+          width: 35%;
+          border-radius: 5px;
+        }
+
+        span {
+          font-size: 1.1em;
+          line-height: 1.6;
+          color: #555;
+          flex: 1;
+          margin-left: 15px;
+        }
+
+        &:hover {
+          background-color: #f5f5f5;
+          transition: background-color 0.3s ease; 
+        }
+      }
+    }
+
+    .selectedLanguage:focus + .languageOptions,
+    .languageOptions:hover {
+      display: block; // Show options on focus/hover
+    }
+  }
+}

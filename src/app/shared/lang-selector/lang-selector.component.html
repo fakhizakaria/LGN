@@ -1,0 +1,14 @@
+<div class="containerLanguages" (click)="onLanguageSelectorClick()">
+  <div class="languageSelector">
+    <button class="selectedLanguage" [ngClass]="{ 'active': showLanguageOptions }">
+      <img [src]="'assets/images/flags/flag_' + selectedLanguage.toLowerCase() + '.png'" alt="{{ selectedLanguage }} Flag" class="flagIcon">
+      <span>{{ selectedLanguage }}</span>
+    </button>
+    <ul class="languageOptions" *ngIf="showLanguageOptions">
+      <li *ngFor="let lang of availableLanguages" (click)="selectLanguage($event, lang)">
+        <img [src]="'assets/images/flags/flag_' + lang.toLowerCase() + '.png'" [alt]="lang + ' Flag'" class="flagIcon">
+        <span>{{ lang }}</span>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+{
+    "About_Me": "Su di me",
+    "About_Desc": "Benvenuto in Lingua! Sono appassionato di facilitare la comunicazione efficace attraverso l'apprendimento delle lingue e la consulenza. Con anni di esperienza, miriamo a creare corsi di lingua su misura ed esperienze arricchenti per tutti gli studenti.",
+    "Contact_Me": "Contattami",
+
+    "LINGUA_NATURE_CATALOGUE_TITLE": "Catalogo Lingua Nature",
+    "CATALOGUE_INTRO": {
+        "WELCOME_MESSAGE": "Benvenuti nel catalogo di Lingua Nature, il vostro portale per l'apprendimento delle lingue tra i meravigliosi paesaggi del Portogallo..."
+    },
+    "SECTIONS": {
+        "São Miguel Island": {
+            "TITLE": "Isola di São Miguel",
+            "DESCRIPTION": "Esplora il nostro percorso di apprendimento online, dove la padronanza delle lingue si intreccia con i meravigliosi paesaggi di São Miguel..."
+        },
+        "Lisbon": {
+            "TITLE": "Lisbona",
+            "DESCRIPTION": "Lisbona è una bellissima città nota per la sua cultura vibrante e la sua straordinaria architettura."
+        }
+    },
+    "SHOW_MORE": "Mostra più immagini",
+    "SHOW_LESS": "Mostra meno",
+
+    "Address": "Indirizzo",
+    "Phone": "Telefono",
+    "Surkhet, NP12, Birendranagar 06": "Surkhet, NP12, Birendranagar 06",
+    "+0098 9893 5647, +0096 3434 5678": "+0098 9893 5647, +0096 3434 5678",
+    "Email": "Email",
+    "infoodinglab.com": "infoodinglab.com",
+    "SEND_MESSAGE": "Invia un messaggio",
+    "LINGUA_SERVICES_QUERY": "Se hai qualche lavoro o domanda relativa ai nostri servizi Lingua, non esitare a inviarci un messaggio. Siamo qui per aiutarti!",
+    "ENTER_NAME": "Inserisci il tuo nome",
+    "NAME_REQUIRED_ERROR": "Il nome è obbligatorio",
+    "INVALID_NAME_ERROR": "Inserisci un nome valido",
+    "ENTER_EMAIL": "Inserisci la tua email",
+    "EMAIL_REQUIRED_ERROR": "L'email è obbligatoria",
+    "INVALID_EMAIL_ERROR": "Inserisci un'email valida",
+    "YOUR_MESSAGE": "Il tuo messaggio",
+    "MESSAGE_REQUIRED_ERROR": "Il messaggio è obbligatorio",
+    "MESSAGE_LENGTH_ERROR": "Inserisci almeno 10 caratteri",
+    "SEND_NOW": "Invia ora",
+    "EMAIL_SENT_MESSAGE": "La tua email è stata inviata. Grazie per il tuo messaggio. Riceverai presto una email di conferma da parte nostra. Stiamo facendo ogni sforzo per risponderti il prima possibile. Grazie per la tua pazienza e il tuo interesse. Rimaneamo disponibili per qualsiasi altra richiesta.",
+
+    "HOME": "Home",
+    "CONTACT_US": "Contattaci",
+    "EVENTS": "Eventi",
+    "SERVICES": "Servizi",
+    "LINGUA_KIDS": "Lingua Kids",
+    "LINGUA_ADULTS": "Lingua Adulti",
+    "LINGUA_TEENS": "Lingua Teen",
+    "CATALOGUES": "Cataloghi",
+    "ABOUT_ME": "Su di me",
+
+    "HELP_TITLE": "Aiuto",
+    "REPORT":"Segnala un problema / Bug",
+    "ExlensIT":"© 2023 | Realizzato da EXLENS IT",
+    "USEFUL_LINKS":"Link utili",
+    "APP_DESCRIPTION_FOOTER": "Offriamo <strong>esperienze di apprendimento coinvolgenti</strong> tra <strong>avventure di trekking e campeggio</strong>.",
+
+    "WHAT_IS_LINGUA_NATURE": "Cos'è Lingua Nature?",
+    "WHAT_IS_LINGUA_NATURE_DESCRIPTION": "Lorem Ipsum è semplicemente il testo fittizio dell'industria tipografica e di stampa. Lorem Ipsum è stato il testo fittizio standard dell'industria fin dagli anni '1500.",    
+    "SERVICES_TITLE": "Servizi",
+    "WELCOME_MESSAGE": "Benvenuti in Lingua! Offriamo una varietà di servizi per soddisfare le vostre esigenze.",
+    "LANGUAGE_FACILITATION": "Facilitazione linguistica",
+    "LANGUAGE_FACILITATION_DESCRIPTION": "Sblocca il potere della comunicazione efficace attraverso i nostri servizi di facilitazione linguistica.",
+    "CONSULTING": "Consulenza",
+    "CONSULTING_DESCRIPTION": "Servizi di consulenza esperti per guidarti nel raggiungimento dei tuoi obiettivi linguistici.",
+    "INDIVIDUAL_COURSES": "Corsi individuali",
+    "INDIVIDUAL_COURSES_DESCRIPTION": "Corsi di lingua personalizzati su misura per le tue esigenze specifiche e il tuo stile di apprendimento.",
+    "SUMMER_CAMP": "Campo estivo",
+    "SUMMER_CAMP_DESCRIPTION": "Immergiti nell'apprendimento delle lingue divertendoti con un'esperienza estiva divertente e arricchente.",
+    "OUR_TEAM": "Il nostro Team",
+    "DAVIS_GEORGE": "Davis George",
+    "CEO": "CEO",
+    "LANGUAGES_LEARNING": "La nostra app per l'apprendimento delle lingue offre un approccio diversificato all'apprendimento delle lingue, adatto a diversi stili di apprendimento.",
+
+    "ABOUT_ANNA": "Su Anna",
+    "ANNA_INTRODUCTION_1": "Benvenuto nel mio mondo di passione e creatività, dove offro una gamma di servizi esclusivi per rendere la tua vita straordinaria.",
+    "ANNA_INTRODUCTION_2": "Dalle consulenze personalizzate alle esperienze uniche, porto un tocco di magia in ogni momento. Partiamo insieme in un viaggio e trasformiamo i tuoi sogni in realtà."
+}

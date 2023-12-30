@@ -1,0 +1,86 @@
+.footer {
+    background-color: #53ae47;
+    color: #000; /* Changed text color to black */
+    padding: 40px 0;
+    width: 100vw;
+  
+    .f-item-con {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      flex-wrap: wrap;
+  
+      .app-info,
+      .useful-links,
+      .help-sec {
+        flex: 1 1 300px;
+        margin: 0 20px;
+      }
+  
+      .app-info .app-name {
+        color: #000; /* Adjusted header text color to black */
+        border-left: 4px solid #000;
+        padding-left: 15px;
+        font-size: 24px;
+        line-height: 1.5;
+        font-weight: 700;
+      }
+  
+      .app-name .app-initial {
+        color: #000; /* Adjusted initial letter color to black */
+        font-weight: 800;
+      }
+  
+      .app-info p {
+        color: #000; /* Adjusted paragraph text color to a slightly darker shade */
+        line-height: 1.6;
+      }
+  
+      .footer-title {
+        font-size: 20px;
+        line-height: 1.5;
+        color: #000; /* Adjusted header text color to black */
+        border-left: 4px solid #000;
+        padding-left: 15px;
+        margin-bottom: 10px;
+      }
+  
+      .useful-links ul,
+      .help-sec ul {
+        padding-left: 20px;
+        list-style: none;
+  
+        li {
+          margin: 5px 0;
+          cursor: pointer;
+          color: #000; /* Adjusted list item text color to a slightly darker shade */
+          transition: color 0.3s ease;
+  
+          &:hover {
+            color:#333; /* Adjusted list item text color on hover to black */
+          }
+        }
+      }
+    }
+  
+    .cr-con {
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+  
+    @media (max-width: 768px) {
+      .f-item-con {
+        .app-info,
+        .useful-links,
+        .help-sec {
+          flex: 1 1 100%;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  

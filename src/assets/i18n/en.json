@@ -1,0 +1,81 @@
+{
+    "About_Me": "About Me",
+    "About_Desc": "Welcome to Lingua! I'm passionate about facilitating effective communication through language learning and consultancy. With years of experience, I aim to create tailored language courses and enriching experiences for all learners.",
+    "Contact_Me": "Contact Me",
+    
+    "LINGUA_NATURE_CATALOGUE_TITLE": "Lingua Nature catalogue",
+    "CATALOGUE_INTRO": {
+      "WELCOME_MESSAGE": "Welcome to Lingua Nature's catalogue, your portal to language learning amidst Portugal's stunning landscapes..."
+    },
+    "SECTIONS": {
+      "São Miguel Island": {
+        "TITLE": "São Miguel Island",
+        "DESCRIPTION": "Explore our e-learning journey, where language mastery intertwines with São Miguel's stunning landscapes..."
+      },
+      "Lisbon": {
+        "TITLE": "Lisbon",
+        "DESCRIPTION": "Lisbon is a beautiful city known for its vibrant culture and stunning architecture."
+      }
+    },
+    "SHOW_MORE": "Show more pics",
+    "SHOW_LESS": "Show less",
+    
+    "Address": "Address",
+    "Phone": "Phone",
+    "Surkhet, NP12, Birendranagar 06": "Surkhet, NP12, Birendranagar 06",
+    "+0098 9893 5647, +0096 3434 5678": "+0098 9893 5647, +0096 3434 5678",
+    "Email": "Email",
+    "infoodinglab.com": "infoodinglab.com",
+    "SEND_MESSAGE": "Send us a message",
+    "LINGUA_SERVICES_QUERY": "If you have any work or queries related to our Lingua services, feel free to send us a message. We're here to help!",
+    "ENTER_NAME": "Enter your name",
+    "NAME_REQUIRED_ERROR": "Name is required",
+    "INVALID_NAME_ERROR": "Please enter a valid name",
+    "ENTER_EMAIL": "Enter your email",
+    "EMAIL_REQUIRED_ERROR": "Email is required",
+    "INVALID_EMAIL_ERROR": "Please enter a valid email",
+    "YOUR_MESSAGE": "Your message",
+    "MESSAGE_REQUIRED_ERROR": "Message is required",
+    "MESSAGE_LENGTH_ERROR": "Please enter at least 10 characters",
+    "SEND_NOW": "Send now",
+    "EMAIL_SENT_MESSAGE": "Your email has been sent. Thank you for your message. You will soon receive a confirmation email from us. We're making every effort to respond to you as quickly as possible. Thank you for your patience and interest. We remain available for any other request.",
+    
+    "HOME": "Home",
+    "CONTACT_US": "Contact Us",
+    "EVENTS": "Events",
+    "SERVICES": "Services",
+    "LINGUA_KIDS": "Lingua Kids",
+    "LINGUA_ADULTS": "Lingua Adults",
+    "LINGUA_TEENS": "Lingua Teens",
+    "CATALOGUES": "Catalogues",
+    "ABOUT_ME": "About Me",
+
+    "HELP_TITLE": "Help",
+    "REPORT":"Report an Issue / Bug",
+    "ExlensIT":"© 2023 | Made by EXLENS IT",
+    "USEFUL_LINKS":"useful links",
+    "APP_DESCRIPTION_FOOTER": "We offer <strong>engaging learning experiences</strong> amidst <strong>hiking and camping adventures</strong>.",
+
+    
+    "WHAT_IS_LINGUA_NATURE": "What is Lingua Nature?",
+    "WHAT_IS_LINGUA_NATURE_DESCRIPTION": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",    
+    "SERVICES_TITLE": "Services",
+    "WELCOME_MESSAGE": "Welcome to Lingua! We offer a variety of services to meet your needs.",
+    "LANGUAGE_FACILITATION": "Language Facilitation",
+    "LANGUAGE_FACILITATION_DESCRIPTION": "Unlock the power of effective communication through our language facilitation services.",
+    "CONSULTING": "Consulting",
+    "CONSULTING_DESCRIPTION": "Expert consulting services to guide you in achieving your language-related goals.",
+    "INDIVIDUAL_COURSES": "Individual Courses",
+    "INDIVIDUAL_COURSES_DESCRIPTION": "Personalized language courses tailored to your specific needs and learning style.",
+    "SUMMER_CAMP": "Summer Camp",
+    "SUMMER_CAMP_DESCRIPTION": "Immerse yourself in language learning while enjoying a fun and enriching summer experience.",
+    "OUR_TEAM": "Our Team",
+    "DAVIS_GEORGE": "Davis George",
+    "CEO": "CEO",
+    "LANGUAGES_LEARNING": "Our language learning app offers a diverse approach to language learning, catering to different learning styles.",
+
+    "ABOUT_ANNA": "About Anna",
+    "ANNA_INTRODUCTION_1": "Welcome to my world of passion and creativity, where I offer a range of exquisite services to make your life extraordinary.",
+    "ANNA_INTRODUCTION_2": "From personalized consultations to unique experiences, I bring a touch of magic to every moment. Let's embark on a journey together and turn your dreams into reality."
+  }
+  

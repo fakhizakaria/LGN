@@ -1,0 +1,29 @@
+<div class="catalogue">
+  <div class="catalogueIntro">
+    <h1>{{ 'LINGUA_NATURE_CATALOGUE_TITLE' | translate }}</h1>
+    <p>
+      {{ 'CATALOGUE_INTRO.WELCOME_MESSAGE' | translate }}
+    </p>
+  </div>
+
+  <div class="sections">
+    <div class="section" *ngFor="let section of sections">
+      <div class="section-header">
+        <h2>{{ 'SECTIONS.' + section.title + '.TITLE' | translate }}</h2>
+        <p>{{ 'SECTIONS.' + section.title + '.DESCRIPTION' | translate }}</p>
+      </div>
+      
+      <div class="image-grid">
+        <div class="image" *ngFor="let image of section.images | slice:0:section.showMore ? section.images.length : 3">
+          <img [src]="image" alt="Image">
+        </div>
+      </div>
+
+      <div class="show-more" *ngIf="section.images.length > 3">
+        <button (click)="toggleShowMore(section)">
+          {{ section.showMore ? ('SHOW_LESS' | translate) : ('SHOW_MORE' | translate) }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
