@@ -29,6 +29,7 @@ Lingua Nature est une application éducative visant à enseigner différentes la
 1. Clonez ce dépôt : `git clone https://github.com/fakhizakaria/LGN.git`
 2. Installez les dépendances : `npm install`
 3. Lancez l'application en mode développement : `ng serve`
+4. Dans le browser: http://localhost:4200/
 
 ## Contribution
 
