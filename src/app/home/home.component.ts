@@ -22,4 +22,23 @@ export class HomeComponent {
   constructor(private translate: TranslateService) {
     this.translate.setDefaultLang('en');
   }
+
+  testimonials = [
+    {
+      avatar: 'assets/images/testimonial/a.jpg',
+      quote: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      author: 'kattie Doe'
+    },
+    {
+      avatar: 'assets/images/testimonial/d.jpg',
+      quote: 'Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus.',
+      author: 'Smith Will'
+    },
+    {
+      avatar: 'assets/images/testimonial/c.jpg',
+      quote: 'Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus.',
+      author: 'Jane diaz'
+    },
+    // Add more testimonials as needed
+  ];
 }

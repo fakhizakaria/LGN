@@ -1,13 +1,9 @@
-// Define variables
 $text-color: #a65922;
 $second-text-color: #ffffff;
-$link-hover-color:#333;
-; // Color on hover
-$link-active-color: #ffcc00; // Color when active
+$link-hover-color: #333;
+$link-active-color: #ffcc00;
 $header-bg-color: #53ae47;
-$dropdown-bg-color: darken($header-bg-color, 10%);
 
-// Header styles
 .header {
   background-color: $header-bg-color;
   color: $second-text-color;
@@ -37,7 +33,7 @@ $dropdown-bg-color: darken($header-bg-color, 10%);
         height: 3px;
         background-color: $second-text-color;
         margin: 4px 0;
-        transition: 0.4s;
+        transition: transform 0.4s ease;
       }
     }
 
@@ -65,7 +61,7 @@ $dropdown-bg-color: darken($header-bg-color, 10%);
           top: 100%;
           left: 10;
           opacity: 0;
-          background-color: #53ae47;
+          background-color: $header-bg-color;
           box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
           transition: opacity 0.3s ease;
           pointer-events: none;
@@ -84,7 +80,7 @@ $dropdown-bg-color: darken($header-bg-color, 10%);
               transition: color 0.3s ease;
 
               &:hover {
-                color: $link-hover-color; // Change color on hover
+                color: $link-hover-color;
               }
             }
           }
@@ -97,17 +93,16 @@ $dropdown-bg-color: darken($header-bg-color, 10%);
           font-size: 1.1em;
 
           &:hover {
-            color: $link-hover-color; // Change color on hover
+            color: $link-hover-color;
           }
 
           &.active {
-            color: $link-active-color; // Change color when active
+            color: $link-active-color;
           }
         }
       }
     }
 
-    // Media query for smaller screens (mobile)
     @media screen and (max-width: 768px) {
       .burger-menu {
         display: block;
@@ -123,7 +118,7 @@ $dropdown-bg-color: darken($header-bg-color, 10%);
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         transform: scaleY(0);
         transform-origin: top;
-        transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         z-index: 999;
 
         &.show-menu {
@@ -157,7 +152,7 @@ $dropdown-bg-color: darken($header-bg-color, 10%);
                 transition: color 0.3s ease;
 
                 &:hover {
-                  color: $link-hover-color; // Change color on hover
+                  color: $link-hover-color;
                 }
               }
             }

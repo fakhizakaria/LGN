@@ -3,7 +3,9 @@
     color: #000; /* Changed text color to black */
     padding: 40px 0;
     width: 100vw;
-  
+    animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    transition: transform 1s ease-in-out;
+
     .f-item-con {
       display: flex;
       justify-content: space-evenly;

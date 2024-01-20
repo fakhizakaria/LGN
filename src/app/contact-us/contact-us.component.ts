@@ -18,8 +18,8 @@ export class ContactUSComponent {
 
   locationImagePath: string = 'assets/images/events/emplacement.png';
   mailImagePath: string = 'assets/images/social_media/mail.png';
-  phoneImagePath: string = 'assets/images/social_media/phone.png';
-
+  phoneImagePath: string = 'assets/images/social_media/whatsapp.png';
+  logoImagePath: string = 'assets/images/feuilles.png';
 
   constructor(private formBuilder: FormBuilder, private emailService: EmailService) {
     this.contactForm = this.createContactForm();
@@ -43,16 +43,12 @@ export class ContactUSComponent {
         next: (response) => {
           console.log('Email sent successfully!', response);
 
-          this.popupTitle = 'Success';
-          this.popupMessage = 'Email sent successfully!';
-          this.showPopup = true;
+          this.showSuccessPopup();
         },
         error: (err) => {
           console.error('Error sending email:', err);
 
-          this.popupTitle = 'Error';
-          this.popupMessage = 'Failed to send email.';
-          this.showPopup = true;
+          this.showErrorPopup();
         }
       });
     } else {
@@ -64,10 +60,24 @@ export class ContactUSComponent {
     const nameRegex = /^[A-Za-z\s'-]+$/;
     return nameRegex.test(control.value) ? null : { invalidName: true };
   }
-
+  
   customEmailValidator(control: AbstractControl): ValidationErrors | null {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(control.value) ? null : { invalidEmail: true };
+  }
+
+  showSuccessPopup() {
+    this.popupTitle = 'Success';
+    this.popupMessage = 'Email sent successfully!';
+    this.mailSended = true;
+    this.showPopup = true;
+  }
+
+  showErrorPopup() {
+    this.popupTitle = 'Error';
+    this.popupMessage = 'Failed to send email.';
+    this.mailSended = false;
+    this.showPopup = true;
   }
 
   closePopup() {

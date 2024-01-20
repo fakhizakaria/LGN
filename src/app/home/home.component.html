@@ -2,7 +2,7 @@
 
 <div class="vitrine">
   <div class="content_vitrine">
-    Lingua Nature 
+    <p>Lingua Nature</p> 
   </div>
 </div>
 
@@ -270,6 +270,29 @@
     </div>
     <div class="about-me-image">
       <img [src]="annabellaImagePath" alt="Annabela">
+    </div>
+  </div>
+</div>
+
+<!-- testimonials.component.html -->
+<div class="testimonials-container">
+  <div class="intro-testimonials">
+    <div class="title-services">
+      Testimonials
+    </div>
+    <div class="description">
+      Our language learning app offers a diverse approach to language learning, catering to different learning styles.
+    </div>
+  </div>
+  <div class="all-testimonials">
+    <div *ngFor="let testimonial of testimonials" class="testimonial-card">
+      <div class="avatar">
+        <img [src]="testimonial.avatar" alt="User Avatar">
+      </div>
+      <div class="content">
+        <p class="quote">{{ testimonial.quote }}</p>
+        <p class="author">{{ testimonial.author }}</p>
+      </div>
     </div>
   </div>
 </div>

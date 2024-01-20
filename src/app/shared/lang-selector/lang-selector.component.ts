@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -8,24 +9,35 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class LangSelectorComponent {
   logoImagePath: string = 'assets/images/connaissance.png';
+  showLanguageOptions: boolean = false;
+  currentLanguage: string = 'English'; // Default to English
 
-  constructor(private translate: TranslateService) {
-    this.translate.setDefaultLang('en'); 
+  constructor(private http: HttpClient, private translate: TranslateService) {
+    this.translate.setDefaultLang('en');
   }
 
-  selectedLanguage: string = 'English';
-  showLanguageOptions: boolean = false;
-  availableLanguages: string[] = ['English', 'French', 'Portugal', 'Italy']; 
-  
+  availableLanguages: string[] = ['English', 'French', 'Portuguese', 'Italian'];
+
+  switchLanguage(event: Event, lang: string): void {
+    event.stopPropagation(); 
+    this.currentLanguage = lang;
+    this.http.get(`https://lgn-translate.s3.eu-north-1.amazonaws.com/${this.getLanguageCode(lang)}.json`)
+      .subscribe(translation => {
+        this.translate.setTranslation(this.getLanguageCode(lang), translation);
+        this.translate.use(this.getLanguageCode(lang));
+      });
+      this.showLanguageOptions = false;
+  }
+
   getLanguageCode(lang: string): string {
     switch (lang) {
       case 'English':
         return 'en';
       case 'French':
         return 'fr';
-      case 'Portugal':
+      case 'Portuguese':
         return 'pt';
-      case 'Italy':
+      case 'Italian':
         return 'it';
       default:
         return 'en';
@@ -36,11 +48,9 @@ export class LangSelectorComponent {
     this.showLanguageOptions = !this.showLanguageOptions;
   }
 
-  selectLanguage(event: Event, lang: string): void {
-    event.stopPropagation(); 
-    this.selectedLanguage = lang;
-    const langCode = this.getLanguageCode(lang);
-    this.translate.use(langCode);
-    this.showLanguageOptions = false;
-  }
+// Update the method to match the correct flag image names
+getFlagImagePath(lang: string): string {
+  return `assets/images/flags/flag_${lang.toLowerCase()}.png`;
+}
+
 }

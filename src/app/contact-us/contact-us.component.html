@@ -75,6 +75,28 @@
     <span (click)="closePopup()" class="close">&times;</span>
     <h2>{{ popupTitle }}</h2>
     <p>{{ popupMessage }}</p>
-    <p *ngIf="!mailSended">{{ 'EMAIL_SENT_MESSAGE' | translate }}</p>
+    <div *ngIf="mailSended; else errorSection">
+      <p>Your message has been successfully sent!</p>
+      <p>You will receive a confirmation email shortly.</p>
+    </div>
+    <ng-template #errorSection>
+      <p>There was an error sending your message. Please try again later.</p>
+    </ng-template>
+    <p class="lingua-nature">Lingua Nature</p>
+    <img [src]="logoImagePath" alt="Logo" width="70px">
   </div>
 </div>
+<!-- <div class="contact-info">
+  <div class="info-item">
+    <img [src]="mailImagePath" alt="mail Lingua Nature">
+      <p>Emailxample.com</p>
+  </div>
+  <div class="info-item">
+    <img [src]="locationImagePath" alt="location Lingua Nature">
+    <p>123 Street, City, Country</p>
+  </div>
+  <div class="info-item">
+    <img [src]="phoneImagePath" alt="mail Lingua Nature">
+    <p>+1234567890</p>
+  </div>
+</div> -->

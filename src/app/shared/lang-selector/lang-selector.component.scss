@@ -2,7 +2,8 @@
   position: absolute;
   left: 20px;
   top: 15%;
-  width: 150px;
+  width: 165px;
+  animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
   .languageSelector {
     position: relative;
@@ -24,7 +25,7 @@
       .flagIcon {
         margin-right: 5px;
         height: 20px;
-        width: 30px;
+        width: 35px;
         border-radius: 5px;
       }
 
@@ -35,13 +36,12 @@
       }
 
       &:hover {
-        // Update styles on hover for better feedback
         background-color: #f5f5f5;
       }
     }
 
     .languageOptions {
-      display: none; // Initially hidden
+      display: none; 
       top: calc(100% + 5px);
       left: 0;
       background-color: white;
@@ -49,7 +49,7 @@
       list-style: none;
       border-radius: 5px;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      display: none; // Initially hidden
+      display: none; 
 
       li {
         cursor: pointer;
@@ -82,7 +82,7 @@
 
     .selectedLanguage:focus + .languageOptions,
     .languageOptions:hover {
-      display: block; // Show options on focus/hover
+      display: block; 
     }
   }
 }

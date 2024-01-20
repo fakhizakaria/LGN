@@ -22,7 +22,7 @@
       <a routerLink="/contact-us">Contact Us</a>
     </div>
     <div *ngIf="!nearestEvent?.summary" class="no-event">
-      <p>No upcoming events</p>
+      <img [src]="comingSoonImagePath" alt="coming soon" width="128px">
       <a routerLink="/contact-us">Contact Us</a>
     </div>
   </div>

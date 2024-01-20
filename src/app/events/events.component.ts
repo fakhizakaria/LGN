@@ -2,13 +2,13 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription, interval } from 'rxjs';
 import { GoogleCalendarService } from '../services/google-calendar.service';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import { TranslateService } from '@ngx-translate/core';
 
 
 interface Attendee {
   email: string;
   responseStatus: string;
 }
-
 interface CalendarEvent {
   title: string;
   start: string;
@@ -20,7 +20,9 @@ interface CalendarEvent {
   visibility?: string;
   organizer?: string;
   attendees?: Attendee[];
-  googleMeetLink?: string; // Add this property for the Google Meet link
+  googleMeetLink?: string;
+  language?: string; // Added property for language
+  activity?: string; // Added property for activity
 }
 
 @Component({
@@ -48,8 +50,10 @@ export class EventsComponent implements OnInit, OnDestroy {
   };
 
   constructor(
-    private calendarService: GoogleCalendarService
-  ) {}
+    private calendarService: GoogleCalendarService, private translate: TranslateService
+  ) {
+    this.translate.setDefaultLang('en');
+  }
 
   ngOnInit(): void {
     this.fetchCalendarData();
@@ -66,50 +70,91 @@ export class EventsComponent implements OnInit, OnDestroy {
   
   fetchCalendarData(): void {
     this.calendarService.getPublicEvents().subscribe(data => {
-      this.eventsCalendar = data.items
-        .map((event: any) => this.formatEvent(event))
-        .sort((a: CalendarEvent, b: CalendarEvent) => {
-          const dateA = new Date(a.start).getTime();
-          const dateB = new Date(b.start).getTime();
-  
-          // Sort by start date in reverse order
-          return dateB - dateA;
-        });
-  
+      this.eventsCalendar = data.items.map((event: any) => {
+        const title = event.summary || '';
+        const description = event.description || '';
+
+        const languageMatch = title.match(/Learning\s(\w+)\s/i);
+        const language = languageMatch ? languageMatch[1] : '';
+
+        const activityMatch = title.match(/While\s([\w\s]+)\s+With\s/i);
+        const activity = activityMatch ? activityMatch[1] : 'hiking';
+
+        return {
+          title: event.summary,
+          start: event.start.dateTime,
+          end: event.end.dateTime,
+          location: event.location,
+          description: this.formatDescription(event.description),
+          creator: event.creator?.email,
+          status: event.status,
+          visibility: event.visibility,
+          organizer: event.organizer?.email,
+          attendees: event.attendees?.map((attendee: any) => ({
+            email: attendee.email,
+            responseStatus: attendee.responseStatus
+          })) || [],
+          googleMeetLink: this.extractMeetLink(event.description),
+          language,
+          activity
+        };
+      });
+
+      this.eventsCalendar.sort((a: CalendarEvent, b: CalendarEvent) => {
+        const dateA = new Date(a.start).getTime();
+        const dateB = new Date(b.start).getTime();
+        return dateA - dateB;
+      });
+
       this.calendarOptions.events = this.eventsCalendar;
     });
   }
-  
+
+  formatDescription(description: string | undefined): string {
+    if (!description) return '';
+    const linkRegex = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1[^>]*?>.*?<\/a>/;
+    const sanitizedDescription = description.replace(linkRegex, '');
+    return sanitizedDescription.replace(/<br\s*\/?>/g, '\n').replace(/<[^>]+>/g, '').trim();
+  }
+
+  extractMeetLink(description: string | undefined): string {
+    if (!description) return '';
+    const linkRegex = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1[^>]*?>.*?<\/a>/;
+    const meetLinkMatches = description.match(linkRegex);
+    return meetLinkMatches ? meetLinkMatches[2] : '';
+  }
   
   formatEvent(event: any): CalendarEvent {
-    // Extracting the Google Meet link from the description
+    // Extract Google Meet link from the description
     const descriptionWithLink = event.description || '';
     const linkRegex = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1[^>]*?>.*?<\/a>/;
     const meetLinkMatches = descriptionWithLink.match(linkRegex);
     const googleMeetLink = meetLinkMatches ? meetLinkMatches[2] : '';
-
-    // Remove the Google Meet link pattern and <br> tags from the description
-    const descriptionWithoutLink = descriptionWithLink
-        .replace(linkRegex, '')
-        .replace(/<br\s*\/?>/g, '');
-
+  
+    // Remove the Google Meet link from the description
+    const sanitizedDescription = descriptionWithLink.replace(linkRegex, '');
+  
+    // Replace line breaks with HTML line breaks and sanitize description
+    const formattedDescription = sanitizedDescription.replace(/<br\s*\/?>/g, '\n').replace(/<[^>]+>/g, '');
+  
     return {
-        title: event.summary,
-        start: event.start.dateTime,
-        end: event.end.dateTime,
-        location: event.location,
-        description: descriptionWithoutLink.trim(),
-        creator: event.creator?.email,
-        status: event.status,
-        visibility: event.visibility,
-        organizer: event.organizer?.email,
-        attendees: event.attendees?.map((attendee: any) => ({
-            email: attendee.email,
-            responseStatus: attendee.responseStatus
-        })) || [],
-        googleMeetLink: googleMeetLink
+      title: event.summary,
+      start: event.start.dateTime,
+      end: event.end.dateTime,
+      location: event.location,
+      description: formattedDescription.trim(),
+      creator: event.creator?.email,
+      status: event.status,
+      visibility: event.visibility,
+      organizer: event.organizer?.email,
+      attendees: event.attendees?.map((attendee: any) => ({
+        email: attendee.email,
+        responseStatus: attendee.responseStatus
+      })) || [],
+      googleMeetLink: googleMeetLink
     };
-}
+  }
+  
 
   formatDate(dateString: string, format: 'day' | 'month' | 'year'): string {
     const date = new Date(dateString);

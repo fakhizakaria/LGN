@@ -1,66 +1,46 @@
-<!-- events time line  -->
+<!-- events timeline -->
 <div class="introEvents">
-  <h2>Lingua Nature Events</h2>
-    <p>Welcome to our vibrant array of events designed to ignite curiosity, learning, and connection! Explore a dynamic world of knowledge and engagement through our meticulously curated gatherings. From captivating workshops to insightful discussions, each event is meticulously crafted to foster inspiration and discovery.
-
-      Join us in a shared journey of exploration, where experts and enthusiasts converge to share insights, spark conversations, and expand horizons. Dive into thought-provoking discussions, immerse yourself in hands-on experiences, and connect with like-minded individuals passionate about discovery and growth.
-      
-      Our events are crafted to cater to diverse interests, welcoming individuals from all walks of life. Engage, learn, and evolve with us as we delve into various domains, fostering a community of learning and collaboration.
-      
-      Stay tuned for our upcoming events, each offering a unique opportunity to delve deeper, broaden perspectives, and be part of an enriching experience. Join us and be a part of this dynamic tapestry of knowledge, innovation, and exploration</p>
+  <h2>{{ 'LINGUA_EVENTS_TITLE' | translate }}</h2>
+ <p>{{ 'EVENTS_DESCRIPTION' | translate }}</p>
 </div>
 
 <section id="timeline">
-  <article *ngFor="let event of eventsCalendar">
-    <div class="inner">
+ <article *ngFor="let event of eventsCalendar">
+   <div class="inner">
 
-      <span class="date">
-        <span class="day">{{ formatDate(event.start, 'day') }}</span>
-        <span class="month">{{ formatDate(event.start, 'month') }}</span>
-        <span class="year">{{ formatDate(event.start, 'year') }}</span>
-      </span>
+     <span class="date">
+       <span class="day">{{ formatDate(event.start, 'day') }}</span>
+       <span class="month">{{ formatDate(event.start, 'month') }}</span>
+       <span class="year">{{ formatDate(event.start, 'year') }}</span>
+     </span>
 
-      <h2>{{ event.title }}</h2>
+     <h2>{{ 'SPECIFIC_EVENTS_TITLE' | translate: { language: event.language, activity: event.activity } }}</h2>
 
-      <div class="descEvent">
-        <p>{{ event.description }}</p>
-      </div>
+     <div class="descEvent">
+       <p>{{ 'SPECIFIC_EVENTS_DESCRIPTION' | translate: { language: event.language, activity: event.activity } }}</p>
+     </div>
 
-      <div class="eventInfo">
-        <img [src]="locationImagePath" alt="location Lingua Nature events">
-        <p><strong>{{ event.location }}</strong></p>
-      </div>
+     <div class="eventInfo">
+       <img [src]="locationImagePath" alt="location Lingua Nature events">
+       <p><strong>{{ event.location }}</strong></p>
+     </div>
 
-      <div class="eventInfo">
-        <img [src]="timeIntervalEventImagePath" alt="Lingua Nature events start and end event">
-        <p><strong>Start at: {{ formatTime(event.start) }} |---| End at: {{ formatTime(event.end) }}</strong></p>
-      </div>
+     <div class="eventInfo">
+       <img [src]="timeIntervalEventImagePath" alt="Lingua Nature events start and end event">
+       <p><strong>{{ 'START_AT' | translate }} {{ formatTime(event.start) }} |---| {{ 'END_AT' | translate }} {{ formatTime(event.end) }}</strong></p>
+     </div>
 
-      <div class="eventInfo">
-        <img [src]="creatorImagePath" alt="Lingua Nature events creator">
-        <p> <strong>Annabela: {{ event.creator }} </strong></p>
-      </div>
+     <div class="eventInfo">
+       <img [src]="creatorImagePath" alt="Lingua Nature events creator">
+       <p> <strong>Annabela: {{ event.creator }} </strong></p>
+     </div>
 
-      <!-- Display attendees if they exist -->
-      <!-- <div *ngIf="event.attendees && event.attendees.length > 0" class="eventInfo">
-        <img [src]="utilisateurverifieImagePath" alt="Lingua Nature events creator">
-        <ul>
-          <li *ngFor="let attendee of event.attendees">
-            {{ attendee.email }} - Status: {{ attendee.responseStatus }}
-          </li>
-        </ul>
-      </div> -->
-
-      <div class="linkGoogleMeeting" *ngIf="event.googleMeetLink">
-        <a [href]="event.googleMeetLink" target="_blank">
-          <img [src]="googleMeetImagePath" alt="Lingua Nature event meeting" width="40px">
-          <span>Join us Live Google Meet</span>
-        </a>
-      </div>
-      
-      
-    </div>
-  </article>
+     <div class="linkGoogleMeeting" *ngIf="event.googleMeetLink">
+       <a [href]="event.googleMeetLink" target="_blank">
+         <img [src]="googleMeetImagePath" alt="Lingua Nature event meeting" width="40px">
+         <span>{{ 'JOIN_US_LIVE' | translate }}</span>
+       </a>
+     </div>
+   </div>
+ </article>
 </section>
-
-

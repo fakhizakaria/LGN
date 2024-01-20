@@ -19,6 +19,7 @@ export class CtaSharedComponent {
   gmailImagePath: string = 'assets/images/social_media/gmail.png';
   locationImagePath: string = 'assets/images/events/emplacement.png';
   timeIntervalEventImagePath: string = 'assets/images/events/debut-de-sablier.png';
+  comingSoonImagePath: string = 'assets/images/bientot-disponible.png';
 
   constructor(private googleCalendarService: GoogleCalendarService) {}
 
@@ -47,8 +48,12 @@ export class CtaSharedComponent {
   
   removeLinkFromDescription() {
     if (this.nearestEvent.description) {
-      const withoutLink = this.nearestEvent.description.replace(/<br><br><a.*?a>/g, '');
-      this.nearestEvent = { ...this.nearestEvent, description: withoutLink };
+      const withoutTags = this.nearestEvent.description.replace(/<br\s*\/?>|<a.*?a>/g, '');
+      if (withoutTags.trim() === '') {
+        delete this.nearestEvent.description; // Remove the description property
+      } else {
+        this.nearestEvent = { ...this.nearestEvent, description: withoutTags };
+      }
     }
   }
   

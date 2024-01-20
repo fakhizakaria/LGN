@@ -8,6 +8,7 @@ import { LangSelectorComponent } from './lang-selector/lang-selector.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpLoaderFactory } from '../app.module';
+import { CustomTranslateLoader } from '../services/custom-translate-loader.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,9 @@ import { HttpLoaderFactory } from '../app.module';
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
+        useClass: CustomTranslateLoader, // Use your custom loader here
+        deps: [HttpClient],
+      },
     }),  ],
   exports: [
     HeaderComponent,

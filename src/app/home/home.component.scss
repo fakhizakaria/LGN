@@ -5,10 +5,7 @@
     background-color: #f9f9f9;
 }
 .vitrine {
-    /* Add styles to the div */
-    // position: relative; /* Permet de positionner les éléments enfants */
     height: 100vh;
-    // background-image: url('../.././assets/images/pexels-markus-spiske-117843.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #53ae47;
@@ -26,17 +23,40 @@
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     justify-content: center;
-    font-size: 65px;
-    font-weight: bolder;
-    color: white;
+    animation: tracking-in-expand 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    transition: transform 1s ease-in-out;
+
     border-radius: 0% 100%;
     background-image: url('../.././assets/images/pexels-baskin-creative-studios-1766838.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     border: 3px solid white;
+    p {
+      font-size: 65px;
+      font-weight: bolder;
+      color: white;
+      text-shadow: 20px 20px 20px rgba(5, 4, 3, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      line-height: 1.2;
+      animation: tracking-in-expand 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+      transition: transform 1s ease-in-out;
+    }
+  }
+
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
   }
   
-/* General styles */
 .container {
   width: 80%;
   height: 100vh;
@@ -46,12 +66,13 @@
   padding: 20px;
   justify-content: space-between;
   align-items: center;
+  animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  transition: transform 1s ease-in-out;
 }
 
-/* Media container */
 .media {
   flex: 1;
-  min-height: 300px; /* Adjust this height as needed */
+  min-height: 300px; 
   background-image: url('../.././assets/images/pexels-eberhard-grossgasteiger-542383.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -60,30 +81,27 @@
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
 
-/* Content container */
 .content {
   flex: 1;
-  max-width: 600px; /* Adjust maximum width as needed */
+  max-width: 600px; 
 }
 
 /* Title */
 .content h1 {
-  font-size: 2.5em; /* Adjust font size as desired */
+  font-size: 2.5em; 
   font-weight: 700;
   text-align: center;
   margin-bottom: 15px;
   color: #333;
 }
 
-/* Description */
 .description {
   font-size: 1.1em;
   line-height: 1.6;
   color: #555;
-  text-align: justify;
+  text-align: center;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -123,7 +141,6 @@
   .responsive-container-block {
     min-height: 75px;
     height: fit-content;
-    // width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin-top: 0px;
@@ -135,7 +152,6 @@
   
   .team-head-text {
     line-height: 50px;
-    // width: 100%;
     margin-top: 0px;
     margin-right: 0px;
     margin-bottom: 50px;
@@ -156,8 +172,6 @@
     padding-right: 30px;
     padding-bottom: 0px;
     padding-left: 30px;
-    // width: 100%;
-    // background-color: #53ae47;
   }
   
   .card {
@@ -249,6 +263,8 @@
   margin: 0 auto;
   padding: 20px;
   background-color: #53ae47;
+  animation: slide-in-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  transition: transform 1s ease-in-out;
 }
 
 /* Title */
@@ -280,7 +296,7 @@
   background-color: #fff;
   overflow: hidden;
   position: relative;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 1s ease-in-out;
 }
 
 .serviceCard:hover {
@@ -313,6 +329,7 @@
   font-size: 16px;
   font-weight: 400;
   color: #555;
+  text-align: center;
 }
 
 .def {
@@ -332,15 +349,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: slide-in-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    transition: transform 1s ease-in-out;
 
   .about-me-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 80%;
+    border-radius: 10px;
+    max-width: 1300px;
     margin: 0 auto;
-    border-radius: 5px;
     padding: 20px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
     background-image: url('../.././assets/images/pexels-kaique-rocha-775201.jpg');
@@ -379,7 +398,7 @@
 
       img {
         box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-        transition: transform 0.3s ease-in-out;
+        transition: transform 1s ease-in-out;
         height: 250px;
         &:hover {
           transform: scale(1.1);
@@ -389,3 +408,99 @@
   }
 }
 
+// testimonials.component.scss
+.testimonials-container {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  border-radius: 10px;
+  max-width: 1300px;
+  margin: 56px auto;
+  padding: 20px;
+  background-color: #53ae47;
+  animation: slide-in-right 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  transition: transform 1s ease-in-out;
+
+  .intro-testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .title-services {
+      font-size: 2.5em;
+      font-weight: 700;
+      margin: 0;
+      text-align: center;
+      color: #333;
+    }
+
+    .description {
+      text-align: center;
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 20px;
+    }
+  }
+
+  .all-testimonials {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .testimonial-card {
+    background-color: #fff;
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 20px 7px;
+    transition: transform 1s ease-in-out, box-shadow 0.3s ease-in-out;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .avatar {
+      img {
+        max-width: 100%;
+        border-radius: 10px 10px 0 0;
+      }
+    }
+
+    .content {
+      margin-top: 15px;
+      text-align: center;
+
+      .quote {
+        font-style: italic;
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #333;
+
+        &:before,
+        &:after {
+          content: '"';
+          color: #aaa;
+          font-size: 24px;
+          margin-right: 5px;
+        }
+      }
+
+      .author {
+        font-weight: bold;
+        font-size: 16px;
+        color: #555;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      width: calc(50% - 20px);
+    }
+
+    @media (max-width: 768px) {
+      width: calc(100% - 20px);
+    }
+  }
+}

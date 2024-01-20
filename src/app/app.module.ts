@@ -18,6 +18,8 @@ import { GoogleCalendarService } from './services/google-calendar.service';
 import { LgnKidsComponent } from './lgn-kids/lgn-kids.component';
 import { LgnadultsComponent } from './lgnadults/lgnadults.component';
 import { LgnteensComponent } from './lgnteens/lgnteens.component';
+import { CustomTranslateLoader } from './services/custom-translate-loader.service';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -44,12 +46,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
+        useClass: CustomTranslateLoader, 
+        deps: [HttpClient],
+      },
     }),
   ],
-  providers: [GoogleCalendarService],
+  providers: [GoogleCalendarService,
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

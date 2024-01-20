@@ -31,7 +31,7 @@
                 "maximumError": "2mb"
               }
             ],
-            "outputPath": "dist",
+            "outputPath": "dist/Linga-Nature",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -44,9 +44,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/slick-carousel/slick/slick.scss",
-              "node_modules/slick-carousel/slick/slick-theme.scss"
+              "src/styles.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js"
